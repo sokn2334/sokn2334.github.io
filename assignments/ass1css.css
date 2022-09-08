@@ -2,10 +2,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.sender-column {
-  text-align: right;
+  margin-top: 50px;
 }
 
 h1 {
@@ -15,12 +12,4 @@ h1 {
 
 h2 {
   font-size: 1.3em;
-}
-
-p,ul,ol,dl,address {
-  font-size: 1.1em;
-}
-
-p, li, dd, dt, address {
-  line-height: 1.5;
 }
