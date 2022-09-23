@@ -49,9 +49,8 @@ html{
 
 article {
   display: block;
-  float: inline-start;
+  float: center;
   margin-left: 32em;
-  margin-right: 12em;
   padding: 2em;
 }
 
@@ -63,7 +62,7 @@ body {
   
 h1 {
     font-size: 3em;
-    text-align: center;
+    text-align: left;
     font-weight: 700;
     color: #F58F7C;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -88,12 +87,6 @@ img{
   width: 25%;
 }
 
-hr{
-  border: none;
-  border-top: 0.5em dotted #F58F7C;
-  width: 40em;
-  margin-left: 0em;
-}
 
 /*Link Color Changes */
 a {
