@@ -2,105 +2,144 @@
 /*------------------------Navigation Bar------------------------*/
 /* Navbar Itself*/
 .navbar {
-    overflow: hidden;
-    background-color: #F2C4ce;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  /* Titles in Navbar */
-  .navbar a {
-    float: right;
-    display: block;
-    color: #4F4F51;
-    text-align: center;
-    padding: 30px 16px;
-    text-decoration: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: x-large;
-  }
-  /* The Left Justified Title (Solymar)*/
-  .navbarname{
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: x-large;
-  }
-  
-  /* Button Hover */
-  .navbar a:hover {
-    background: #4F4F51;
-    color: #F2C4ce;
-  }
-  
-  .main {
-    padding: 16px;
-    margin-top: 35px;
-    height: 1500px; /* Used in this example to enable scrolling */
-  }
+  overflow: hidden;
+  background-color: #F2C4ce;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Titles in Navbar */
+.navbar a {
+  float: right;
+  display: block;
+  color: #4F4F51;
+  text-align: center;
+  padding: 30px 16px;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: x-large;
+}
+/* The Left Justified Title (Solymar)*/
+.navbarname{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: x-large;
+  margin-left: 1rem;
+  margin-top: 0.35rem;
+}
+
+/* Button Hover */
+.navbar a:hover {
+  background: #4F4F51;
+  color: #F2C4ce;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 35px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
 
 /*------------------------Main CSS Styling------------------------*/
 html{
-  background-color: white;
+background-color: white;
 }
 
-article {
-  display: block;
-  float: center;
-  margin-left: 32em;
-  padding: 2em;
+.grid {
+margin: 0 2rem;
+padding: 3rem 2rem;
+display: grid;
+grid-template-columns: 1.6fr 4fr;
+column-gap: 7rem;
+}
+article{
+display: flex;
+flex-direction: column;
+max-width: 100%;
+overflow: hidden;
 }
 
 body {
-    margin-left: 0em;
-    margin-top: 6em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-h1 {
-    font-size: 3em;
-    text-align: left;
-    font-weight: 700;
-    color: #F58F7C;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
-h2 {
-  font-weight: 100;
-  font-style: italic;
-  color:#4F4F51;
+  margin-left: 0em;
+  margin-top: 6em;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  text-align: left;
+  font-weight: 700;
+  color: #F58F7C;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2 {
+font-weight: 100;
+font-style: italic;
+color:#4F4F51;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 p {
-  color: #4F4F51;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+color: #4F4F51;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 img{
-  float: left;
-  margin-left: 7em;
-  margin-top: 3em;
-  width: 25%;
+max-width: 400px;
+float: left;
 }
 
+hr{
+border: none;
+border-top: 0.5em dotted #F58F7C;
+width: 40em;
+margin-left: 0em;
+}
 
 /*Link Color Changes */
 a {
-  color: #F58F7C;
+color: #F58F7C;
 }  
 
 a:hover {
-    text-decoration: underline;
-    color: #F2C4ce;
-  }
-
-a:visited {
-  color: #4F4F51;
+  text-decoration: underline;
+  color: #F2C4ce;
 }
 
+a:visited {
+color: #4F4F51;
+}
 
-  
+@media only screen and (max-width: 900px) {
+.navbar a {
+  font-size: large;
+}
+.navbarname{
+  font-size: large;
+  margin-top: 0.55em;
+}
+h1 {
+  font-size: 3em;
+  text-align: left;
+  font-weight: 700;
+  color: #F58F7C;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.grid {
+  margin: 0 2rem;
+  padding: 3rem 2rem;
+  grid-template-columns: 1.6fr 4fr;
+  column-gap: 7rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-auto-rows: 50%;
+  height: 70em;
+}
+
+}
+
