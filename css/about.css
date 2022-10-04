@@ -116,30 +116,30 @@ color: #4F4F51;
 }
 
 @media only screen and (max-width: 900px) {
-    .navbar a {
-      font-size: large;
-    }
-    .navbarname{
-      font-size: large;
-      margin-top: 0.55em;
-    }
-    h1 {
-      font-size: 3em;
-      text-align: left;
-      font-weight: 700;
-      color: #F58F7C;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-    .grid {
-      margin: 0 2rem;
-      padding: 3rem 2rem;
-      grid-template-columns: 1.6fr 4fr;
-      column-gap: 7rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      grid-auto-rows: 50%;
-      height: 70em;
-    }
+  .navbar a {
+    font-size: large;
+  }
+  .navbarname{
+    font-size: large;
+    margin-top: 0.55em;
+  }
+  h1 {
+    font-size: 3em;
+    text-align: left;
+    font-weight: 700;
+    color: #F58F7C;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .grid {
+    margin: 0 2rem;
+    padding: 3rem 2rem;
+    grid-template-columns: 1.6fr 4fr;
+    column-gap: 7rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 50%;
+    height: 70em;
+  }
 
 }
 
