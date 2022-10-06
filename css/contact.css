@@ -101,6 +101,11 @@ width: 40em;
 margin-left: 0em;
 }
 
+inlin
+{
+  display: flex;
+}
+
 /*Link Color Changes */
 a {
 color: #F58F7C;

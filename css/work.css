@@ -93,6 +93,8 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 img{
 max-width: 400px;
 float: left;
+margin-top: 0em;
+padding-bottom: 4em;
 }
 
 
@@ -117,6 +119,11 @@ a:visited {
 color: #4F4F51;
 }
 
+iframe
+{
+  width: 430px;
+  height: 450px;
+}
 
 @media only screen and (max-width: 900px) {
 .navbar a {
@@ -141,8 +148,13 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-auto-rows: 50%;
-  height: 46em;
 }
+img{
+  max-width: 400px;
+  float: left;
+  margin-top: 0em;
+  padding-bottom: 4em;
+  }
 
 }
 
