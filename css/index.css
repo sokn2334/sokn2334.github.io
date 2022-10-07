@@ -29,7 +29,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: x-large;
     margin-left: 1rem;
-    margin-top: 0.35rem;
+    margin-top: 1rem;
   }
   
   /* Button Hover */
@@ -67,6 +67,7 @@ article{
 img{
   max-width: 400px;
   float: left;
+  padding-top: 2em;
 }
 
 /*------------------------Text Formating------------------------*/
@@ -94,6 +95,7 @@ h2 {
 p {
   color: #4F4F51;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
 }
 
 hr{
@@ -103,7 +105,8 @@ hr{
   margin-left: 0em;
 }
 
-/*Link Color Changes */
+
+/*------------------------Link Color Changes------------------------*/
 a {
   color: #F58F7C;
 }  
@@ -117,6 +120,119 @@ a:visited {
   color: #4F4F51;
 }
 
+/*------------------------Changes for About Page------------------------*/
+.grid-about
+{
+  margin: 0 2rem;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 9fr 4fr;
+  column-gap: 7rem;
+}
+.grid-about-small
+{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  column-gap: 2.5rem;
+}
+.push
+{
+  padding-top: 0.6em;
+}
+/*------------------------Changes for Work Page------------------------*/
+.grid-work
+{
+  margin: 0 2rem;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  column-gap: 7rem;
+}
+
+video
+{
+  padding-top: 2em;
+}
+
+iframe
+{
+  width: 430px;
+  height: 450px;
+  margin-top: 2em;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+figcaption {
+  text-align: left;
+  font-size: large;
+  font-style: italic;
+  font-weight: 300;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hr-work{
+  border: none;
+  border-top: 0.5em dotted #F58F7C;
+  width: 80em;
+  margin-left: 4em;
+  }
+
+/*------------------------Changes for Contact Page------------------------*/
+.grid-contact {
+  margin: 0 2rem;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1.6fr 4fr;
+  column-gap: 7rem;
+}
+
+.img-row {
+  display: flex;
+  padding-left: 3em;
+}
+
+.img-column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+.push-h1
+{
+  text-align: left;
+  padding-left: 4rem;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+.push-h
+{
+  text-align: left;
+  padding-left: 4rem;
+  padding-top: 0.5em;
+  padding-bottom: 0em;
+  font-size: xx-large;
+}
+.caption
+{
+  text-align: left;
+  padding-left: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 3em;
+  text-align: center;
+}
+
+.hr-contact{
+  border: none;
+  border-top: 0.5em dotted #F58F7C;
+  width: 80em;
+  margin-left: 4em;
+  }
+
+/*------------------------Media Query------------------------*/
 @media only screen and (max-width: 900px) {
   .navbar a {
     font-size: large;
@@ -142,6 +258,80 @@ a:visited {
     grid-auto-rows: 50%;
     height: 70em;
   }
+  .grid-about{
+    margin: 0 2rem;
+    padding: 3rem 2rem;
+    grid-template-columns: 1.6fr 4fr;
+    column-gap: 7rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-row: auto;
+    height: auto;
+  }
+  .grid-about-small
+  {
+    grid-template-columns: 4fr 1fr;
+    column-gap: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-row: auto;
+    height: auto;
+  }
+  .grid-work
+  {
+    margin: 0 2rem;
+    padding: 3rem 2rem;
+    grid-template-columns: 3fr 3fr;
+    column-gap: 7rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 50%;
+    height: fit-content;
+  }
+  .hr-work{
+    border: none;
+    border-top: 0.5em dotted #F58F7C;
+    width: 25em;
+    margin-left: 4em;
+    }
+
+  .grid-contact
+  {
+    margin: 0 2rem;
+    padding: 3rem 2rem;
+    grid-template-columns: 1.6fr 4fr;
+    column-gap: 7rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 50%;
+    height: fit-content;
+  }
+
+  .img-row {
+    display: inline-block;
+    padding-left: 3em;
+  }
+  
+  .img-column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+  .caption
+  {
+    text-align: left;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 3em;
+    text-align: left;
+  }
+
+  .hr-contact{
+    border: none;
+    border-top: 0.5em dotted #F58F7C;
+    width: 25em;
+    margin-left: 4em;
+    }
 
 }
   
