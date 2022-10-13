@@ -1,0 +1,72 @@
+body {
+    font-family: helvetica, sans-serif;
+    width: 400px;
+    margin-left: 0em;
+    margin-top: 6em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+  }
+
+  label {
+    font-weight: bold;  
+    color: #F58F7C;
+    font-size: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  div {
+    padding-bottom: 20px;
+  }
+
+  input[type="text"] {
+    padding: 5px;
+    width: 350px;
+  }
+
+  p {
+    background: #F58F7C;
+    color: #4F4F51;
+    padding: 10px;
+    visibility: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+  }
+  button
+  {
+    background: #F2C4ce;
+    color: #4F4F51;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.4em;
+  }
+
+
+/*------------------------Main CSS Styling------------------------*/
+html{
+  background-color: white;
+}
+.main {
+    padding: 16px;
+    margin-top: 35px;
+    height: 1500px;
+  }
+
+.grid {
+  margin: 0 23rem;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 4fr 4fr;
+  column-gap: 7rem;
+}
+
+.center
+{
+    text-align: center;
+}
+
+hr{
+  border: none;
+  border-top: 0.5em dotted #F58F7C;
+  width: 40em;
+  margin-left: 0em;
+}
+
