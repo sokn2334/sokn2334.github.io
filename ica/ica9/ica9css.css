@@ -1,0 +1,57 @@
+
+.msgBox {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 300px;
+background: #eee;
+}
+
+.msgBox p {
+line-height: 1.5;
+padding: 10px 20px;
+color: #333;
+padding-left: 82px;
+background-position: 10px center;
+background-repeat: no-repeat;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 1.6rem;
+}
+
+.msgBox button {
+background: none;
+border: none;
+position: absolute;
+top: 0;
+right: 0;
+font-size: 1.7rem;
+color: #4F4F51;
+}
+
+button
+{
+    background-color: #F2C4ce;
+    color: #4F4F51;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    box-shadow: 4px 4px #4F4F51;
+}
+
+.center
+{
+    margin-top: 2em;
+    margin-left: 25em;
+}
+hr{
+    border: none;
+    border-top: 0.5em dotted #F58F7C;
+    width: 40em;
+    margin-left: 25em;
+    margin-top: 3em;
+  }
+
+.push
+{
+    margin-top: 30em;
+}
