@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>JSON: Task 1</title>
+    <style>
+      p {
+        color: #4F4F51;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: large;
+        text-align: center;
+      }
+      hr{
+        border: none;
+        border-top: 0.5em dotted #F58F7C;
+        width: 40em;
+        text-align: center;
+        }
+       body{
+        margin-top: 20px;
+       }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+     <!--<link rel="stylesheet" href="../styles.css"> -->
+  </head>
+
+  <body>
+    <hr class="push">
+    <section class="preview">
+
+
+    </section>
+    <hr>
+  </body>
+  <script>
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    let para2 = document.createElement('p');
+    let paratest = document.createElement('p');
+    let motherInfo = 'The mother cats are called ';
+    let kittenInfo;
+    const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
+
+    fetch(requestURL)
+    .then(response => response.text())
+    .then(text => displayCatInfo(text))
+
+    function displayCatInfo(catString) {
+      let total = 0;
+      let male = 0;
+      let female =0;
+
+      // Add your code here
+      const catInfo = JSON.parse(catString);
+
+      catArraySize = catInfo.length;
+      lastCat = catArraySize - 1;
+      for (let i = 0; i < catArraySize; i++){
+        if (i == lastCat){
+            motherInfo += ` and ${catInfo[i].name}. `;
+        } else {
+            motherInfo += ` ${catInfo[i].name }, `;
+        }
+        
+        for (const kitten of catInfo[i].kittens){
+            total += 1;
+            if (kitten.gender == 'f'){
+                female += 1;
+            } else {
+                male += 1;
+            }
+        }
+      }
+
+      kittenInfo = `There are a total of ${ total } kittens. There are ${ male } of male kittens and ${ female } of female kittens.`;
+
+      // Don't edit the code below here!
+      para1.textContent = motherInfo;
+      para2.textContent = kittenInfo;
+    }
+
+    section.appendChild(para1);
+    section.appendChild(para2);
+  </script>
+
+</html>
