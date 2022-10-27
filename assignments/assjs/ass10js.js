@@ -51,7 +51,7 @@ console.log(JSON.company[0].companyName, JSON.company[0].website, JSON.company[0
 
 console.log("Problem 3: ");
 console.log(JSON.company[0].employees[3].firstName, JSON.company[0].employees[3].department, JSON.company[0].employees[3].designation, JSON.company[0].employees[3].salary, JSON.company[0].employees[3].raiseEligible)
-  
+console.log("As seen in the array ",JSON.company[0].employees);
 
 
 //Problem 4: Total of Salaries
@@ -67,7 +67,7 @@ console.log("The total salary is", total);
 //Problem 5: Raises
 console.log("Problem 5: ");
 for (let i = 0; i < 4; i++){
-    if(JSON.company[0].employees[i].raiseEligible === true)
+    if (JSON.company[0].employees[i].raiseEligible === true)
     {
         let oldSalary = JSON.company[0].employees[i].salary;
         let newSalary = oldSalary + (oldSalary * 0.1);
@@ -77,4 +77,15 @@ for (let i = 0; i < 4; i++){
     }
 };
 
+console.log("Problem 6: ");
+console.log("People working from home are: ");
+for (let i = 0; i < 4; i++){
+    if (JSON.company[0].employees[i].wfh === true)
+    {
+        console.log(JSON.company[0].employees[i].firstName);
+    }
+};
+
+console.log("Full JSON:", JSON);
+console.log("Q.E.D");
       
