@@ -1,25 +1,111 @@
-html, body {
-    margin: 0;
-  }
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: rgb(236, 236, 236);
+}
+
+hr{
+  border: none;
+  border-top: 0.5em dotted #F58F7C;
+  width: 33em;
+  margin: auto;
   
-  html {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    height: 100%;
+}
+
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  background-color: rgb(255,255,255,0.7);
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+header {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+  /* border-bottom: 1px solid #ebebeb; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.quotes {
+  padding: 20px 50px;
+  min-height: 200px;
+  text-align: center;
+}
+
+.quote-text {
+  padding-bottom: 20px;
+  font-size: 25px;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.controls {
+  width: 100%;
+  padding: 20px 50px;
+}
+
+.button {
+  display: block;
+  color: #4F4F51;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.twitter {
+  background-color: #F2C4ce;
+  text-decoration: none;
+}
+
+.twitter:hover {
+  background-color: #F58F7C;
+  color: white;
+}
+
+.new-quote {
+  background-color: #F2C4ce;
+  margin-bottom: 15px;
+}
+
+.new-quote:hover {
+  background-color:  #F58F7C;
+  color: white;
+}
+
+.new-quote:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    width: 100%;
   }
-  
-  body {
-    overflow: hidden;
-    height: inherit;
+  .quote-text {
+    font-size: 18px;
   }
-  
-  h1 {
-    font-size: 2rem;
-    letter-spacing: -1px;
-    position: absolute;
-    margin: 0;
-    top: -4px;
-    right: 5px;
-  
-    color: transparent;
-    text-shadow: 0 0 4px white;
-  }
+}
