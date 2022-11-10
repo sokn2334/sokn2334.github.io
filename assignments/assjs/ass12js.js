@@ -29,6 +29,11 @@ for(var c=0; c<brickColumnCount; c++) {
   }
 }
 
+function randomNumber(min, max){
+  const num = Math.floor(Math.random() * (max - min + 1))+ min;
+  return num;
+}
+
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
@@ -63,7 +68,7 @@ function collisionDetection() {
           if(score == 10) {
             alert("You have submitied this phone number: " + output.textContent);
             document.location.reload();
-            clearInterval(interval); // Needed for Chrome to end game
+            clearInterval(interval);
           }
         }
       }
@@ -132,7 +137,7 @@ function draw() {
     else {
       alert("The ball has hit the ground, please try again!");
       document.location.reload();
-      clearInterval(interval); // Needed for Chrome to end game
+      clearInterval(interval);
     }
   }
 
