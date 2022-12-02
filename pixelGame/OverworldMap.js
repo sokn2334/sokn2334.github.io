@@ -56,6 +56,19 @@ class OverworldMap{
         }
 
         this.isCutscenePlaying = false;
+        //Reset NPCs to do their idle behavior
+        Object.values(this.gameObjects).forEach(object => object.doBehaviorEvent(this))
+    }
+
+    checkForActionCutscene() {
+        const cat = this.gameObjects["cat"];
+        const nextCoords = utils.nextPosition(cat.x, cat.y,cat.direction);
+        const match = Object.values(this.gameObjects).find(object => {
+            return `${object.x}, ${object.y}` === `${nextCoords.x}, ${nextCoords.y}`
+        });
+        if(!this.isCutscenePlaying && match && match.talking.length) {
+            this.startCutscene(match.talking[0].events)
+        }
     }
 
     addWall(x,y){
@@ -91,19 +104,29 @@ window.OverworldMaps ={
                     {type: "stand", direction: "up", time:800},
                     {type: "stand", direction: "right", time:1200},
                     {type: "stand", direction: "up", time: 300},
+                ],
+                talking: [
+                    {
+                        events: [
+                            { type: "textMessage", text: "I'm busy..", faceHero: "npcA"},
+                            { type: "textMessage", text: "Go away!"},
+                            { who: "cat", type: "walk", direction: "up"}
+                        ]
+                    }
                 ]
+
             }),
             npcB: new Person({
-                x:utils.widthGrid(3),
-                y:utils.widthGrid(7),
+                x:utils.widthGrid(8),
+                y:utils.widthGrid(5),
                 src: "images/characters/npc2.png",
-                behaviorLoop:[
-                    {type: "walk", direction: "left"},
-                    {type: "stand", direction: "up", time: 800},
-                    {type: "walk", direction: "up"},
-                    {type: "walk", direction: "right"},
-                    {type: "walk", direction: "down"},
-                ]
+                // behaviorLoop:[
+                //     {type: "walk", direction: "left"},
+                //     {type: "stand", direction: "up", time: 800},
+                //     {type: "walk", direction: "up"},
+                //     {type: "walk", direction: "right"},
+                //     {type: "walk", direction: "down"},
+                // ]
             }),
         },
         walls: {
