@@ -1,6 +1,8 @@
 class OverworldMap{
     constructor(config){
+        this.overworld = null;
         this.gameObjects = config.gameObjects;
+        this.cutsceneSpaces = config.cutsceneSpaces || {};
         this.walls = config.walls || {};
 
 
@@ -60,6 +62,8 @@ class OverworldMap{
         Object.values(this.gameObjects).forEach(object => object.doBehaviorEvent(this))
     }
 
+  
+
     checkForActionCutscene() {
         const cat = this.gameObjects["cat"];
         const nextCoords = utils.nextPosition(cat.x, cat.y,cat.direction);
@@ -68,6 +72,14 @@ class OverworldMap{
         });
         if(!this.isCutscenePlaying && match && match.talking.length) {
             this.startCutscene(match.talking[0].events)
+        }
+    }
+
+    checkForFootstepCutscene(){
+        const cat = this.gameObjects["cat"];
+        const match = this.cutsceneSpaces[ `${cat.x},${cat.y}` ];
+        if (!this.isCutscenePlaying && match){
+            this.startCutscene( match[0].events )
         }
     }
 
@@ -135,6 +147,27 @@ window.OverworldMaps ={
             [utils.asGridCoord(8,6)] : true,
             [utils.asGridCoord(7,7)] : true,
             [utils.asGridCoord(8,7)] : true,
+        },
+        cutsceneSpaces: {
+            [utils.asGridCoord(7,4)] : [
+                {
+                    events: [
+                        {who: "npcB", type: "walk", direction: "left"},
+                        {who: "npcB", type: "stand", direction: "up", time: 500},
+                        { type: "textMessage", text: "You can't be in there!"},
+                        {who: "npcB", type: "walk", direction: "right"},
+                        {who: "cat", type: "walk", direction: "down"},
+                        {who: "cat", type: "walk", direction: "left"},
+                    ]
+                }
+            ],
+            [utils.asGridCoord(5,10)] : [
+                {
+                    events: [
+                        { type: "changeMap", map: "Kitchen"}
+                    ]
+                }
+            ]
         }
     },
 
@@ -142,19 +175,22 @@ window.OverworldMaps ={
         lowerSrc: "images/maps/KitchenLower.png",
         upperSrc: "images/maps/KitchenUpper.png",
         gameObjects:{
-            cat: new GameObject({
-                x:3,
-                y:5,
+            cat: new Person({
+                isPlayerControlled: true,
+                x: utils.widthGrid(5),
+                y: utils.widthGrid(5),
             }),
-            npcA: new GameObject({
-                x:9,
-                y:6,
-                src: "images/characters/npc2.png",
-            }),
-            npcB: new GameObject({
-                x:10,
-                y:8,
+            npcB: new Person({
+                x: utils.widthGrid(10),
+                y: utils.widthGrid(8),
                 src: "images/characters/npc3.png",
+                talking: [
+                    {
+                        events: [
+                            { type: "textMessage", text: "You made it!", faceHero: "npcB"},
+                        ]
+                    }
+                ]
             }),
         }
     }

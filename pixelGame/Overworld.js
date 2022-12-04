@@ -49,30 +49,37 @@ class Overworld{
         })
     }
 
+    bindCatPositionCheck(){
+        document.addEventListener("PersonWalkingComplete", e => {
+            if(e.detail.whoId === "cat") {
+                //Cat's position has changed
+                this.map.checkForFootstepCutscene()
+            }
+        })
+    }
+
+
+    startMap(mapConfig){
+        this.map = new OverworldMap(mapConfig);
+        this.map.overworld = this;
+        this.map.mountObjects();
+    }
 
     init(){
-        this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
-        this.map.mountObjects();
+        this.startMap(window.OverworldMaps.Kitchen);
 
         this.bindActionInput();
+        this.bindCatPositionCheck();
         
         this.directionInput = new DirectionInput();
         this.directionInput.init();
-        // this.directionInput.direction; //Return "down"
+
 
         this.startGameLoop();
 
         // this.map.startCutscene([
-        
-        //     { who: "cat", type: "walk", direction: "down"},
-        //     { who: "cat", type: "walk", direction: "down"},
-        //     { who: "npcA", type: "walk", direction: "up"},
-        //     { who: "npcA", type: "walk", direction: "left"},
-        //     { who: "cat", type: "stand", direction: "right", time: 200},
-        //     { type: "textMessage", text: "HELLO THERE!"}
-        //     // { who: "npcA", type: "walk", direction: "left"},
-        //     // { who: "npcA", type: "walk", direction: "left"},
-        //     // { who: "npcA", type: "stand", direction: "up", time: 800 },
+        //     { type: "changeMap", map: "DemoRoom"}
+        //     //{ type: "textMessage", text: "I would really like to pass away right now!"}
         // ])
     }
 }
