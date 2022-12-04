@@ -2,7 +2,7 @@
     --border-color: #291D4D;
     --dialog-background: #FFF3B4;
 
-    --menu-background: #FFE8D2;
+    --menu-background: #ddb8e8;
     --menu-border-color: #A48465;
     --menu-font-color: #3A160D;
     --menu-selected-background: #7fc2ff;
@@ -15,7 +15,9 @@ box-sizing: border-box;
 
 
 body{
-    background: rgb(70, 95, 70);
+    /*background: rgb(70, 95, 70);*/
+    background: #6e6b6e;
+    
     padding: 0;
     margin: 0;
     overflow: hidden;

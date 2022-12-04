@@ -66,7 +66,7 @@ class Overworld{
     }
 
     init(){
-        this.startMap(window.OverworldMaps.Kitchen);
+        this.startMap(window.OverworldMaps.DemoRoom);
 
         this.bindActionInput();
         this.bindCatPositionCheck();
@@ -77,9 +77,11 @@ class Overworld{
 
         this.startGameLoop();
 
-        // this.map.startCutscene([
-        //     { type: "changeMap", map: "DemoRoom"}
-        //     //{ type: "textMessage", text: "I would really like to pass away right now!"}
-        // ])
+        this.map.startCutscene([
+            // { type: "changeMap", map: "DemoRoom"}
+            { type: "textMessage", text: "My witch hasn't been back home in a while..."},
+            { type: "textMessage", text: "I'm starting to get worried, maybe I should go look for them!"},
+            { type: "textMessage", text: "I should probably explore this room before leaving"}
+        ])
     }
 }

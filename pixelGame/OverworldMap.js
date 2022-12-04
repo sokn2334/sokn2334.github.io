@@ -104,64 +104,141 @@ window.OverworldMaps ={
         gameObjects:{
             cat: new Person({
                 isPlayerControlled: true,
-                x:utils.widthGrid(5),
+                x:utils.widthGrid(7),
                 y:utils.widthGrid(6),
             }),
-            npcA: new Person({
-                x:utils.widthGrid(7),
-                y:utils.widthGrid(9),
-                src: "images/characters/npc1.png",
-                behaviorLoop: [
-                    {type: "stand", direction: "left", time:800},
-                    {type: "stand", direction: "up", time:800},
-                    {type: "stand", direction: "right", time:1200},
-                    {type: "stand", direction: "up", time: 300},
-                ],
-                talking: [
-                    {
-                        events: [
-                            { type: "textMessage", text: "I'm busy..", faceHero: "npcA"},
-                            { type: "textMessage", text: "Go away!"},
-                            { who: "cat", type: "walk", direction: "up"}
-                        ]
-                    }
-                ]
+            // npcA: new Person({
+            //     x:utils.widthGrid(7),
+            //     y:utils.widthGrid(9),
+            //     src: "images/characters/npc1.png",
+            //     behaviorLoop: [
+            //         {type: "stand", direction: "left", time:800},
+            //         {type: "stand", direction: "up", time:800},
+            //         {type: "stand", direction: "right", time:1200},
+            //         {type: "stand", direction: "up", time: 300},
+            //     ],
+            //     talking: [
+            //         {
+            //             events: [
+            //                 { type: "textMessage", text: "I'm busy..", faceHero: "npcA"},
+            //                 { type: "textMessage", text: "Go away!"},
+            //                 { who: "cat", type: "walk", direction: "up"}
+            //             ]
+            //         }
+            //     ]
 
-            }),
-            npcB: new Person({
-                x:utils.widthGrid(8),
-                y:utils.widthGrid(5),
-                src: "images/characters/npc2.png",
-                // behaviorLoop:[
-                //     {type: "walk", direction: "left"},
-                //     {type: "stand", direction: "up", time: 800},
-                //     {type: "walk", direction: "up"},
-                //     {type: "walk", direction: "right"},
-                //     {type: "walk", direction: "down"},
-                // ]
-            }),
+            // }),
+            // npcB: new Person({
+            //     x:utils.widthGrid(8),
+            //     y:utils.widthGrid(5),
+            //     src: "images/characters/npc2.png",
+            //     // behaviorLoop:[
+            //     //     {type: "walk", direction: "left"},
+            //     //     {type: "stand", direction: "up", time: 800},
+            //     //     {type: "walk", direction: "up"},
+            //     //     {type: "walk", direction: "right"},
+            //     //     {type: "walk", direction: "down"},
+            //     // ]
+            // }),
         },
         walls: {
             //"16, 16" : true
-            [utils.asGridCoord(7,6)] : true,
-            [utils.asGridCoord(8,6)] : true,
-            [utils.asGridCoord(7,7)] : true,
-            [utils.asGridCoord(8,7)] : true,
+            [utils.asGridCoord(1,3)] : true, //Back Wall
+            [utils.asGridCoord(2,3)] : true,
+            [utils.asGridCoord(3,3)] : true,
+            [utils.asGridCoord(4,3)] : true,
+            [utils.asGridCoord(5,3)] : true,
+            [utils.asGridCoord(6,3)] : true,
+            [utils.asGridCoord(7,3)] : true,
+            [utils.asGridCoord(8,3)] : true,
+            [utils.asGridCoord(9,2)] : true, //Door
+            [utils.asGridCoord(10,3)] : true,
+
+            [utils.asGridCoord(11,3)] : true, //left walls
+            [utils.asGridCoord(11,4)] : true,
+            [utils.asGridCoord(11,5)] : true,
+            [utils.asGridCoord(11,6)] : true,
+            [utils.asGridCoord(11,7)] : true,
+            //[utils.asGridCoord(11,8)] : true,
+
+            [utils.asGridCoord(12,7)] : true,
+            [utils.asGridCoord(13,7)] : true,
+
+            [utils.asGridCoord(13,8)] : true, //Left books
+            [utils.asGridCoord(13,9)] : true,
+            [utils.asGridCoord(13,10)] : true,
+            [utils.asGridCoord(13,11)] : true,
+            [utils.asGridCoord(13,12)] : true,
+
+            [utils.asGridCoord(12,12)] : true, //Bottom
+            [utils.asGridCoord(11,12)] : true,
+            [utils.asGridCoord(10,12)] : true,
+            [utils.asGridCoord(9,12)] : true,
+            [utils.asGridCoord(8,12)] : true,
+            [utils.asGridCoord(7,12)] : true,
+            [utils.asGridCoord(6,12)] : true,
+
+            [utils.asGridCoord(5,13)] : true,
+            [utils.asGridCoord(4,12)] : true,
+            [utils.asGridCoord(3,12)] : true,
+            [utils.asGridCoord(2,12)] : true,
+            [utils.asGridCoord(1,12)] : true,
+            [utils.asGridCoord(0,12)] : true,
+
+            [utils.asGridCoord(0,11)] : true, //Right Side
+            [utils.asGridCoord(0,10)] : true,
+            [utils.asGridCoord(0,9)] : true,
+            [utils.asGridCoord(0,8)] : true,
+            [utils.asGridCoord(1,7)] : true,
+            [utils.asGridCoord(1,6)] : true,
+            [utils.asGridCoord(1,5)] : true,
+            [utils.asGridCoord(0,4)] : true,
+
+            [utils.asGridCoord(5,6)] : true, //Pot
+            [utils.asGridCoord(4,6)] : true,
         },
         cutsceneSpaces: {
-            [utils.asGridCoord(7,4)] : [
+            [utils.asGridCoord(9,3)] : [
                 {
                     events: [
-                        {who: "npcB", type: "walk", direction: "left"},
-                        {who: "npcB", type: "stand", direction: "up", time: 500},
-                        { type: "textMessage", text: "You can't be in there!"},
-                        {who: "npcB", type: "walk", direction: "right"},
+                        { type: "textMessage", text: "This is my witch's Room"},
+                        { type: "textMessage", text: "I am not allowed in there..."},
+                        { type: "textMessage", text: "...I'm positive they are not in there"},
+                        { type: "textMessage", text: "I should look somewhere else"},
                         {who: "cat", type: "walk", direction: "down"},
-                        {who: "cat", type: "walk", direction: "left"},
                     ]
                 }
             ],
-            [utils.asGridCoord(5,10)] : [
+            [utils.asGridCoord(2,6)] : [
+                {
+                    events: [
+                        {who: "cat", type: "stand", direction: "left"},
+                        { type: "textMessage", text: "My witch spends a long time studying"},
+                        { type: "textMessage", text: "I hope to be a great witch like them someday"},
+                    ]
+                }
+            ],
+            [utils.asGridCoord(12,9)] : [
+                {
+                    events: [
+                        {who: "cat", type: "stand", direction: "right"},
+                        { type: "textMessage", text: "These books are too hard for me to read..."},
+                        {who: "cat", type: "stand", direction: "up"},
+                        { type: "textMessage", text: "Maybe my witch went to buy a book?"},
+                        {who: "cat", type: "stand", direction: "left"},
+                    ]
+                }
+            ],
+            [utils.asGridCoord(2,11)] : [
+                {
+                    events: [
+                        {who: "cat", type: "stand", direction: "left"},
+                        { type: "textMessage", text: "My witch loves flowers..."},
+                        { type: "textMessage", text: "...I think they are quite pointless to have in the house"},
+                    ]
+                }
+            ],
+            [utils.asGridCoord(5,12)] : [
                 {
                     events: [
                         { type: "changeMap", map: "Kitchen"}
@@ -177,7 +254,7 @@ window.OverworldMaps ={
         gameObjects:{
             cat: new Person({
                 isPlayerControlled: true,
-                x: utils.widthGrid(5),
+                x: utils.widthGrid(10),
                 y: utils.widthGrid(5),
             }),
             npcB: new Person({
@@ -191,7 +268,21 @@ window.OverworldMaps ={
                         ]
                     }
                 ]
-            }),
+            })
+        },
+        walls: {
+            //"16, 16" : true
+            [utils.asGridCoord(1,3)] : true, //Back Wall
+            [utils.asGridCoord(2,3)] : true
+        },
+        cutsceneSpaces: {
+            [utils.asGridCoord(5,5)] : [
+                {
+                    events: [
+                        { type: "changeMap", map: "DemoRoom"}
+                    ]
+                }
+            ]
         }
     }
 }
