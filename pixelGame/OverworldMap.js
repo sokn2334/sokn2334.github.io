@@ -295,19 +295,21 @@ window.OverworldMaps ={
                 y: utils.widthGrid(19),//utils.widthGrid(0)300,
             }),
             swampy: new Person({
-                x: utils.widthGrid(16),
-                y: utils.widthGrid(20),
+                x: utils.widthGrid(44.5),
+                y: utils.widthGrid(45),
                 src: "images/characters/swampy.png",
-                // talking: [
-                //     {
-                //         events: [
-                //             { type: "textMessage", text: "You made it!", faceHero: "npcB"},
-                //         ]
-                //     }
-                // ],
                 behaviorLoop:[
                     {type: "stand", direction: "down", time: 800},
                     {type: "stand", direction: "left", time: 800},
+                ],
+            }),
+            shadowy: new Person({
+                x: utils.widthGrid(61), 
+                y: utils.widthGrid(12), 
+                src: "images/characters/shadowy.png",
+                behaviorLoop:[
+                    {type: "stand", direction: "down", time: 1400},
+                    {type: "stand", direction: "right", time: 1400},
                 ],
             })
         },
@@ -401,13 +403,52 @@ window.OverworldMaps ={
 
         },
         cutsceneSpaces: {
+            [utils.asGridCoord(15,19)] : [
+                {
+                    events: [
+                        { type: "changeMap", map: "Main"}
+                    ]
+                }
+            ],
             [utils.asGridCoord(48,23)] : [
                 {
                     events: [
                         { type: "changeMap", map: "Kitchen"}
                     ]
                 }
-            ]
+            ],
+            [utils.asGridCoord(44,44)] : [
+                {
+                    events: [
+                        { type: "textMessage", text: "You are looking for your witch?"},
+                        { type: "textMessage", text: "Sorry, I don't know..."},
+                        { type: "textMessage", text: "Keep following the path to the East, then North..."},
+                        { type: "textMessage", text: "You'll find the shadow, maybe he'll know"},
+                        {who: "cat", type: "walk", direction: "up"},
+                    ]
+                }
+            ],
+            [utils.asGridCoord(45,44)] : [
+                {
+                    events: [
+                        { type: "textMessage", text: "You are looking for your witch?"},
+                        { type: "textMessage", text: "Sorry, I don't know..."},
+                        { type: "textMessage", text: "Keep following the path to the East, then North..."},
+                        { type: "textMessage", text: "You'll find the shadow, maybe he'll know"},
+                        {who: "cat", type: "walk", direction: "up"},
+                    ]
+                }
+            ],
+            [utils.asGridCoord(62,12)] : [
+                {
+                    events: [
+                        { type: "textMessage", text: "Mhmmmm?"},
+                        { type: "textMessage", text: "Your witch? I recall seeing them go through that portal..."},
+                        { type: "textMessage", text: "You know, the one South West of here?"},
+                        { type: "textMessage", text: "Good luck!"},
+                    ]
+                }
+            ],
         }
     }
 }
