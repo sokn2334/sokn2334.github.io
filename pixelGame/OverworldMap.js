@@ -98,9 +98,9 @@ class OverworldMap{
 
 
 window.OverworldMaps ={
-    DemoRoom:{
-        lowerSrc: "images/maps/DemoLower.png",
-        upperSrc: "images/maps/DemoUpper.png",
+    Main:{
+        lowerSrc: "images/maps/MainLower.png",
+        upperSrc: "images/maps/MainUpper.png",
         gameObjects:{
             cat: new Person({
                 isPlayerControlled: true,
@@ -241,7 +241,7 @@ window.OverworldMaps ={
             [utils.asGridCoord(5,12)] : [
                 {
                     events: [
-                        { type: "changeMap", map: "Kitchen"}
+                        { type: "changeMap", map: "SouthForest"}
                     ]
                 }
             ]
@@ -279,7 +279,132 @@ window.OverworldMaps ={
             [utils.asGridCoord(5,5)] : [
                 {
                     events: [
-                        { type: "changeMap", map: "DemoRoom"}
+                        { type: "changeMap", map: "Main"}
+                    ]
+                }
+            ]
+        }
+    },
+    SouthForest:{
+        lowerSrc: "images/maps/SouthForestLower.png",
+        upperSrc: "images/maps/SouthForestUpper.png",
+        gameObjects:{
+            cat: new Person({
+                isPlayerControlled: true,
+                x: utils.widthGrid(15),//utils.widthGrid(0)252
+                y: utils.widthGrid(19),//utils.widthGrid(0)300,
+            }),
+            swampy: new Person({
+                x: utils.widthGrid(16),
+                y: utils.widthGrid(20),
+                src: "images/characters/swampy.png",
+                // talking: [
+                //     {
+                //         events: [
+                //             { type: "textMessage", text: "You made it!", faceHero: "npcB"},
+                //         ]
+                //     }
+                // ],
+                behaviorLoop:[
+                    {type: "stand", direction: "down", time: 800},
+                    {type: "stand", direction: "left", time: 800},
+                ],
+            })
+        },
+        walls: {
+            //"16, 16" : true
+            [utils.asGridCoord(7,17)] : true, //Main House + fence
+            [utils.asGridCoord(8,17)] : true,
+            [utils.asGridCoord(9,17)] : true,
+            [utils.asGridCoord(10,17)] : true,
+            [utils.asGridCoord(11,17)] : true,
+            [utils.asGridCoord(12,17)] : true,
+            [utils.asGridCoord(13,17)] : true,
+            [utils.asGridCoord(14,17)] : true,
+
+            [utils.asGridCoord(14,18)] : true,
+            [utils.asGridCoord(14,19)] : true,
+            [utils.asGridCoord(16,18)] : true,
+            [utils.asGridCoord(16,19)] : true,
+
+            [utils.asGridCoord(15,17)] : true,
+            [utils.asGridCoord(16,17)] : true,
+            [utils.asGridCoord(17,17)] : true,
+            [utils.asGridCoord(18,17)] : true,
+            [utils.asGridCoord(19,17)] : true,
+            [utils.asGridCoord(20,17)] : true,
+            [utils.asGridCoord(21,17)] : true,
+            [utils.asGridCoord(22,17)] : true,
+            [utils.asGridCoord(23,17)] : true,
+            [utils.asGridCoord(24,17)] : true,
+            [utils.asGridCoord(25,17)] : true,
+            [utils.asGridCoord(26,17)] : true,
+            [utils.asGridCoord(27,17)] : true,
+            [utils.asGridCoord(28,17)] : true,
+            [utils.asGridCoord(29,17)] : true,
+            [utils.asGridCoord(30,17)] : true,
+            [utils.asGridCoord(31,17)] : true,
+            [utils.asGridCoord(32,17)] : true,
+            [utils.asGridCoord(33,17)] : true,
+
+            [utils.asGridCoord(33,18)] : true,
+            [utils.asGridCoord(33,19)] : true,
+            [utils.asGridCoord(33,20)] : true,
+            [utils.asGridCoord(33,21)] : true,
+            [utils.asGridCoord(33,22)] : true,
+            [utils.asGridCoord(33,23)] : true,
+            [utils.asGridCoord(33,24)] : true,
+            [utils.asGridCoord(33,25)] : true,
+            [utils.asGridCoord(33,26)] : true,
+            [utils.asGridCoord(33,27)] : true,
+
+            [utils.asGridCoord(32,27)] : true,
+            [utils.asGridCoord(31,27)] : true,
+            [utils.asGridCoord(30,27)] : true,
+            [utils.asGridCoord(29,27)] : true,
+            [utils.asGridCoord(28,27)] : true,
+            [utils.asGridCoord(27,27)] : true,
+            [utils.asGridCoord(26,27)] : true,
+            [utils.asGridCoord(25,27)] : true,
+            [utils.asGridCoord(24,27)] : true,
+            [utils.asGridCoord(23,27)] : true,
+            [utils.asGridCoord(22,27)] : true,
+            [utils.asGridCoord(21,27)] : true,
+            [utils.asGridCoord(20,27)] : true,
+            [utils.asGridCoord(19,27)] : true,
+            [utils.asGridCoord(18,27)] : true,
+            [utils.asGridCoord(17,27)] : true,
+
+            [utils.asGridCoord(13,27)] : true,
+            [utils.asGridCoord(12,27)] : true,
+            [utils.asGridCoord(11,27)] : true,
+            [utils.asGridCoord(10,27)] : true,
+            [utils.asGridCoord(9,27)] : true,
+            [utils.asGridCoord(8,27)] : true,
+            [utils.asGridCoord(7,27)] : true,
+
+            [utils.asGridCoord(7,27)] : true,
+            [utils.asGridCoord(7,26)] : true,
+            [utils.asGridCoord(7,25)] : true,
+            [utils.asGridCoord(7,24)] : true,
+            [utils.asGridCoord(7,23)] : true,
+            [utils.asGridCoord(7,22)] : true,
+            [utils.asGridCoord(7,21)] : true,
+            [utils.asGridCoord(7,20)] : true,
+            [utils.asGridCoord(7,19)] : true,
+            [utils.asGridCoord(7,18)] : true, // End of house and fence
+        
+            [utils.asGridCoord(30,19)] : true,
+            [utils.asGridCoord(31,19)] : true,
+            [utils.asGridCoord(32,19)] : true,
+            [utils.asGridCoord(31,18)] : true,
+
+        },
+        cutsceneSpaces: {
+            [utils.asGridCoord(48,23)] : [
+                {
+                    events: [
+                        { type: "changeMap", map: "Kitchen"}
                     ]
                 }
             ]
