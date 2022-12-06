@@ -145,7 +145,7 @@ a:visited {
   margin: 0 2rem;
   padding: 3rem 2rem;
   display: grid;
-  grid-template-columns: 3fr 3fr;
+  grid-template-columns: 2.5fr 2.5fr;
   column-gap: 7rem;
 }
 
@@ -156,9 +156,10 @@ video
 
 iframe
 {
-  width: 430px;
+  width: 550px;
   height: 450px;
   margin-top: 2em;
+  align-self: center;
 }
 
 figure {
