@@ -236,11 +236,11 @@ figcaption {
 /*------------------------Media Query------------------------*/
 @media only screen and (max-width: 980px) {
   .navbar a {
-    font-size: large;
+    font-size: medium;
   }
   .navbarname{
-    font-size: large;
-    margin-top: 0.55em;
+    font-size: medium;
+    margin-top: 0.60em;
   }
   h1 {
     font-size: 3em;
