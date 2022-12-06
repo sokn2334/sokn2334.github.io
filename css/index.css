@@ -289,6 +289,15 @@ figcaption {
     grid-auto-rows: 50%;
     height: fit-content;
   }
+  iframe
+{
+  width: 400px;
+  height: 450px;
+  margin-top: 2em;
+  align-self: center;
+}
+
+
   .hr-work{
     border: none;
     border-top: 0.5em dotted #F58F7C;
