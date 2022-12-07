@@ -166,7 +166,20 @@ figure {
   display: flex;
   flex-direction: column;
   margin: 0;
+  text-align: center;
 }
+
+.center {
+  display: block;
+  margin-left: 10em;
+  margin-right: auto;
+  width: 90%;
+  text-align: center;
+}
+.cap{
+  margin-left: 10em;
+}
+
 
 figcaption {
   text-align: left;
@@ -174,6 +187,7 @@ figcaption {
   font-style: italic;
   font-weight: 300;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
 }
 
 .hr-work{
