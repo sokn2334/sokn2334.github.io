@@ -107,39 +107,6 @@ window.OverworldMaps ={
                 x:utils.widthGrid(7),
                 y:utils.widthGrid(6),
             }),
-            // npcA: new Person({
-            //     x:utils.widthGrid(7),
-            //     y:utils.widthGrid(9),
-            //     src: "images/characters/npc1.png",
-            //     behaviorLoop: [
-            //         {type: "stand", direction: "left", time:800},
-            //         {type: "stand", direction: "up", time:800},
-            //         {type: "stand", direction: "right", time:1200},
-            //         {type: "stand", direction: "up", time: 300},
-            //     ],
-            //     talking: [
-            //         {
-            //             events: [
-            //                 { type: "textMessage", text: "I'm busy..", faceHero: "npcA"},
-            //                 { type: "textMessage", text: "Go away!"},
-            //                 { who: "cat", type: "walk", direction: "up"}
-            //             ]
-            //         }
-            //     ]
-
-            // }),
-            // npcB: new Person({
-            //     x:utils.widthGrid(8),
-            //     y:utils.widthGrid(5),
-            //     src: "images/characters/npc2.png",
-            //     // behaviorLoop:[
-            //     //     {type: "walk", direction: "left"},
-            //     //     {type: "stand", direction: "up", time: 800},
-            //     //     {type: "walk", direction: "up"},
-            //     //     {type: "walk", direction: "right"},
-            //     //     {type: "walk", direction: "down"},
-            //     // ]
-            // }),
         },
         walls: {
             //"16, 16" : true
@@ -201,10 +168,10 @@ window.OverworldMaps ={
             [utils.asGridCoord(9,3)] : [
                 {
                     events: [
-                        { type: "textMessage", text: "This is my witch's Room"},
-                        { type: "textMessage", text: "I am not allowed in there..."},
-                        { type: "textMessage", text: "...I'm positive they are not in there"},
-                        { type: "textMessage", text: "I should look somewhere else"},
+                        { type: "textMessage", text: "Cat: This is my witch's room."},
+                        { type: "textMessage", text: "Cat: I am not allowed in there..."},
+                        { type: "textMessage", text: "Cat: ...I'm positive they are not in there."},
+                        { type: "textMessage", text: "Cat: I should look somewhere else."},
                         {who: "cat", type: "walk", direction: "down"},
                     ]
                 }
@@ -213,8 +180,8 @@ window.OverworldMaps ={
                 {
                     events: [
                         {who: "cat", type: "stand", direction: "left"},
-                        { type: "textMessage", text: "My witch spends a long time studying"},
-                        { type: "textMessage", text: "I hope to be a great witch like them someday"},
+                        { type: "textMessage", text: "Cat: My witch spends a long time studying."},
+                        { type: "textMessage", text: "Cat: I hope to be a great witch like them someday."},
                     ]
                 }
             ],
@@ -222,9 +189,9 @@ window.OverworldMaps ={
                 {
                     events: [
                         {who: "cat", type: "stand", direction: "right"},
-                        { type: "textMessage", text: "These books are too hard for me to read..."},
+                        { type: "textMessage", text: "Cat: These books are too hard for me to read..."},
                         {who: "cat", type: "stand", direction: "up"},
-                        { type: "textMessage", text: "Maybe my witch went to buy a book?"},
+                        { type: "textMessage", text: "Cat: Maybe my witch went to buy a book?"},
                         {who: "cat", type: "stand", direction: "left"},
                     ]
                 }
@@ -233,8 +200,8 @@ window.OverworldMaps ={
                 {
                     events: [
                         {who: "cat", type: "stand", direction: "left"},
-                        { type: "textMessage", text: "My witch loves flowers..."},
-                        { type: "textMessage", text: "...I think they are quite pointless to have in the house"},
+                        { type: "textMessage", text: "Cat: My witch loves flowers..."},
+                        { type: "textMessage", text: "Cat: ...I think they are quite pointless to have in the house."},
                     ]
                 }
             ],
@@ -247,39 +214,77 @@ window.OverworldMaps ={
             ]
         }
     },
-
-    Kitchen:{
-        lowerSrc: "images/maps/KitchenLower.png",
-        upperSrc: "images/maps/KitchenUpper.png",
+    NorthForest:{
+        lowerSrc: "images/maps/NorthForestLower.png",
+        upperSrc: "images/maps/LibraryUpper.png",
         gameObjects:{
             cat: new Person({
                 isPlayerControlled: true,
-                x: utils.widthGrid(10),
-                y: utils.widthGrid(5),
+                x: utils.widthGrid(27),
+                y: utils.widthGrid(21),
             }),
-            npcB: new Person({
-                x: utils.widthGrid(10),
-                y: utils.widthGrid(8),
-                src: "images/characters/npc3.png",
-                talking: [
-                    {
-                        events: [
-                            { type: "textMessage", text: "You made it!", faceHero: "npcB"},
-                        ]
-                    }
-                ]
-            })
         },
         walls: {
             //"16, 16" : true
-            [utils.asGridCoord(1,3)] : true, //Back Wall
-            [utils.asGridCoord(2,3)] : true
+            [utils.asGridCoord(25,19)] : true, //Back Wall
+            [utils.asGridCoord(26,19)] : true,
+            [utils.asGridCoord(27,19)] : true,
+            [utils.asGridCoord(28,19)] : true,
+            [utils.asGridCoord(29,19)] : true,
+
+            [utils.asGridCoord(29,20)] : true,
+            [utils.asGridCoord(29,21)] : true,
+            [utils.asGridCoord(29,22)] : true,
+            [utils.asGridCoord(29,23)] : true,
+
+            [utils.asGridCoord(28,23)] : true,
+            [utils.asGridCoord(27,23)] : true,
+            [utils.asGridCoord(26,23)] : true,
+            [utils.asGridCoord(25,23)] : true,
+            [utils.asGridCoord(24,23)] : true,
+            [utils.asGridCoord(23,23)] : true,
+            [utils.asGridCoord(22,23)] : true,
+            [utils.asGridCoord(21,23)] : true,
+            [utils.asGridCoord(20,23)] : true,
+
+            [utils.asGridCoord(20,22)] : true,
+            [utils.asGridCoord(19,22)] : true,
+
+            [utils.asGridCoord(19,21)] : true,
+            [utils.asGridCoord(18,21)] : true,
+            [utils.asGridCoord(17,21)] : true,
+
+            [utils.asGridCoord(17,20)] : true,
+
+            [utils.asGridCoord(17,19)] : true,
+            [utils.asGridCoord(17,18)] : true,
+
+            [utils.asGridCoord(18,18)] : true,
+            [utils.asGridCoord(19,18)] : true,
+            [utils.asGridCoord(20,18)] : true,
+
+            [utils.asGridCoord(22,18)] : true,
+            [utils.asGridCoord(23,18)] : true,
+            [utils.asGridCoord(24,18)] : true,
+            [utils.asGridCoord(25,18)] : true,
+
+            [utils.asGridCoord(21,17)] : true,
+
+
+
         },
         cutsceneSpaces: {
-            [utils.asGridCoord(5,5)] : [
+            [utils.asGridCoord(21,18)] : [
                 {
                     events: [
-                        { type: "changeMap", map: "Main"}
+                        { type: "changeMap", map: "Library"}
+                    ]
+                }
+            ],
+            [utils.asGridCoord(27,21)] : [
+                {
+                    events: [
+                        { type: "changeMap", map: "SouthForest"}
                     ]
                 }
             ]
@@ -401,6 +406,36 @@ window.OverworldMaps ={
             [utils.asGridCoord(32,19)] : true,
             [utils.asGridCoord(31,18)] : true,
 
+            [utils.asGridCoord(42,41)] : true, // 
+            [utils.asGridCoord(41,41)] : true,
+            [utils.asGridCoord(40,41)] : true,
+            [utils.asGridCoord(39,41)] : true,
+            [utils.asGridCoord(38,41)] : true,
+            [utils.asGridCoord(37,41)] : true,
+
+            [utils.asGridCoord(42,41)] : true,
+            [utils.asGridCoord(42,42)] : true,
+            [utils.asGridCoord(42,43)] : true,
+            [utils.asGridCoord(42,44)] : true,
+            [utils.asGridCoord(42,45)] : true,
+            [utils.asGridCoord(42,46)] : true,
+
+            [utils.asGridCoord(43,46)] : true,
+            [utils.asGridCoord(44,46)] : true,
+            [utils.asGridCoord(45,46)] : true,
+            [utils.asGridCoord(46,46)] : true,
+            [utils.asGridCoord(47,46)] : true,
+
+            [utils.asGridCoord(47,45)] : true,
+            [utils.asGridCoord(47,44)] : true,
+            [utils.asGridCoord(47,43)] : true,
+            [utils.asGridCoord(47,42)] : true,
+            [utils.asGridCoord(47,41)] : true,
+
+            [utils.asGridCoord(48,40)] : true,
+
+
+
         },
         cutsceneSpaces: {
             [utils.asGridCoord(15,19)] : [
@@ -413,17 +448,17 @@ window.OverworldMaps ={
             [utils.asGridCoord(48,23)] : [
                 {
                     events: [
-                        { type: "changeMap", map: "Kitchen"}
+                        { type: "changeMap", map: "NorthForest"}
                     ]
                 }
             ],
             [utils.asGridCoord(44,44)] : [
                 {
                     events: [
-                        { type: "textMessage", text: "You are looking for your witch?"},
-                        { type: "textMessage", text: "Sorry, I don't know..."},
-                        { type: "textMessage", text: "Keep following the path to the East, then North..."},
-                        { type: "textMessage", text: "You'll find the shadow, maybe he'll know"},
+                        { type: "textMessage", text: "Swampy: You are looking for your witch?"},
+                        { type: "textMessage", text: "Swampy: Sorry, I don't know..."},
+                        { type: "textMessage", text: "Swampy: Keep following the path to the East, then North..."},
+                        { type: "textMessage", text: "Swampy: You'll find the shadow, maybe he'll know."},
                         {who: "cat", type: "walk", direction: "up"},
                     ]
                 }
@@ -431,10 +466,10 @@ window.OverworldMaps ={
             [utils.asGridCoord(45,44)] : [
                 {
                     events: [
-                        { type: "textMessage", text: "You are looking for your witch?"},
-                        { type: "textMessage", text: "Sorry, I don't know..."},
-                        { type: "textMessage", text: "Keep following the path to the East, then North..."},
-                        { type: "textMessage", text: "You'll find the shadow, maybe he'll know"},
+                        { type: "textMessage", text: "Swampy: You are looking for your witch?"},
+                        { type: "textMessage", text: "Swampy: Sorry, I don't know..."},
+                        { type: "textMessage", text: "Swampy: Keep following the path to the East, then North..."},
+                        { type: "textMessage", text: "Swampy: You'll find the shadow, maybe he'll know."},
                         {who: "cat", type: "walk", direction: "up"},
                     ]
                 }
@@ -442,13 +477,174 @@ window.OverworldMaps ={
             [utils.asGridCoord(62,12)] : [
                 {
                     events: [
-                        { type: "textMessage", text: "Mhmmmm?"},
-                        { type: "textMessage", text: "Your witch? I recall seeing them go through that portal..."},
-                        { type: "textMessage", text: "You know, the one South West of here?"},
-                        { type: "textMessage", text: "Good luck!"},
+                        {who: "cat", type: "stand", direction: "left"},
+                        { type: "textMessage", text: "Shadow: Mhmmmm?"},
+                        { type: "textMessage", text: "Shadow: Your witch? I recall seeing them go through that portal..."},
+                        { type: "textMessage", text: "Shadow: You know, the one South West of here? Just follow the path to the left."},
+                        { type: "textMessage", text: "Shadow: Good luck!"},
+                    ]
+                }
+            ],
+            [utils.asGridCoord(15,27)] : [
+                {
+                    events: [
+                        { type: "textMessage", text: "Cat: I should go to the dock to find Swampy, maybe they will know where my witch is."},
+                        { type: "textMessage", text: "Cat: I just need to follow the path to the lake."},
+                    ]
+                }
+            ],
+            [utils.asGridCoord(14,27)] : [
+                {
+                    events: [
+                        { type: "textMessage", text: "Cat: I should go to the dock to find Swampy, maybe they will know where my witch is."},
+                        { type: "textMessage", text: "Cat: I just need to follow the path to the lake."},
+                    ]
+                }
+            ],
+            [utils.asGridCoord(16,27)] : [
+                {
+                    events: [
+                        { type: "textMessage", text: "Cat: I should go to the dock to find Swampy, maybe they will know where my witch is."},
+                        { type: "textMessage", text: "Cat: I just need to follow the path to the lake."},
                     ]
                 }
             ],
         }
-    }
+    },
+    Library:{
+        lowerSrc: "images/maps/LibraryLower.png",
+        upperSrc: "images/maps/LibraryUpper.png",
+        gameObjects:{
+            cat: new Person({
+                isPlayerControlled: true,
+                x: utils.widthGrid(12),
+                y: utils.widthGrid(14),
+            }),
+            wizard: new Person({
+                x: utils.widthGrid(9),
+                y: utils.widthGrid(8),
+                src: "images/characters/wizard.png",
+                talking: [
+                    {
+                        events: [
+                            { type: "textMessage", text: "You made it!"},
+                        ]
+                    }
+                ]
+            })
+        },
+        walls: {
+            //"16, 16" : true
+            [utils.asGridCoord(1,6)] : true, //Back Wall
+            [utils.asGridCoord(2,6)] : true,
+            [utils.asGridCoord(3,6)] : true,
+            [utils.asGridCoord(4,6)] : true,
+            [utils.asGridCoord(5,6)] : true,
+            [utils.asGridCoord(6,6)] : true,
+            [utils.asGridCoord(7,6)] : true,
+            [utils.asGridCoord(8,6)] : true,
+            [utils.asGridCoord(9,6)] : true,
+            [utils.asGridCoord(10,6)] : true,
+            [utils.asGridCoord(11,6)] : true,
+            [utils.asGridCoord(12,6)] : true,
+
+            [utils.asGridCoord(12,5)] : true,
+            [utils.asGridCoord(12,4)] : true,
+
+            [utils.asGridCoord(13,4)] : true,
+            [utils.asGridCoord(14,4)] : true,
+            [utils.asGridCoord(15,4)] : true,
+            [utils.asGridCoord(16,4)] : true,
+            [utils.asGridCoord(17,4)] : true,
+            [utils.asGridCoord(18,4)] : true,
+            [utils.asGridCoord(19,4)] : true,
+
+            [utils.asGridCoord(19,5)] : true,
+            [utils.asGridCoord(19,6)] : true,
+            [utils.asGridCoord(19,7)] : true,
+            [utils.asGridCoord(19,8)] : true,
+            [utils.asGridCoord(19,9)] : true,
+            [utils.asGridCoord(19,10)] : true,
+            [utils.asGridCoord(19,11)] : true,
+            [utils.asGridCoord(19,12)] : true,
+            [utils.asGridCoord(19,13)] : true,
+            [utils.asGridCoord(19,14)] : true,
+
+            [utils.asGridCoord(18,14)] : true,
+            [utils.asGridCoord(17,14)] : true,
+            [utils.asGridCoord(16,14)] : true,
+            [utils.asGridCoord(15,14)] : true,
+            [utils.asGridCoord(14,14)] : true,
+            [utils.asGridCoord(13,14)] : true,
+
+            [utils.asGridCoord(12,15)] : true,
+
+            [utils.asGridCoord(11,14)] : true,
+            [utils.asGridCoord(10,14)] : true,
+            [utils.asGridCoord(9,14)] : true,
+            [utils.asGridCoord(8,14)] : true,
+            [utils.asGridCoord(7,14)] : true,
+            [utils.asGridCoord(6,14)] : true,
+            [utils.asGridCoord(5,14)] : true,
+            [utils.asGridCoord(4,14)] : true,
+            [utils.asGridCoord(3,14)] : true,
+            [utils.asGridCoord(2,14)] : true,
+            [utils.asGridCoord(1,14)] : true,
+            [utils.asGridCoord(0,14)] : true,
+            
+            [utils.asGridCoord(0,14)] : true,
+            [utils.asGridCoord(0,13)] : true,
+            [utils.asGridCoord(0,12)] : true,
+            [utils.asGridCoord(0,11)] : true,
+            [utils.asGridCoord(0,10)] : true,
+            [utils.asGridCoord(0,9)] : true,
+            [utils.asGridCoord(0,8)] : true,
+            [utils.asGridCoord(0,7)] : true,
+
+            [utils.asGridCoord(3,10)] : true, //Table
+            [utils.asGridCoord(4,10)] : true,
+            [utils.asGridCoord(5,10)] : true,
+            [utils.asGridCoord(6,10)] : true,
+            [utils.asGridCoord(6,9)] : true,
+            [utils.asGridCoord(5,9)] : true,
+            [utils.asGridCoord(4,9)] : true,
+            [utils.asGridCoord(3,9)] : true,
+
+            [utils.asGridCoord(14,9)] : true,
+            [utils.asGridCoord(15,9)] : true,
+            [utils.asGridCoord(16,9)] : true,
+            [utils.asGridCoord(17,9)] : true,
+            [utils.asGridCoord(18,9)] : true,
+
+
+           
+        },
+        cutsceneSpaces: {
+            [utils.asGridCoord(12,14)] : [
+                {
+                    events: [
+                        { type: "changeMap", map: "NorthForest"}
+                    ]
+                }
+            ],
+            [utils.asGridCoord(12,13)] : [
+                {
+                    events: [
+                        {who: "wizard", type: "walk", direction: "down"},
+                        {who: "wizard", type: "walk", direction: "down"},
+                        {who: "wizard", type: "walk", direction: "down"},
+                        {who: "wizard", type: "walk", direction: "down"},
+                        { type: "textMessage", text: "Witch: You made it!"},
+                        { type: "textMessage", text: "Witch: Happy birthday my apprentice!"},
+                        { type: "textMessage", text: "Witch: I'm glad to have you as my partner, thank you!"},
+                        {who: "wizard", type: "walk", direction: "up"},
+                        {who: "wizard", type: "walk", direction: "up"},
+                        {who: "wizard", type: "walk", direction: "up"},
+                        {who: "wizard", type: "walk", direction: "up"},
+                        {who: "wizard", type: "stand", direction: "down"},
+                    ]
+                }
+            ],
+        }
+    },
 }
