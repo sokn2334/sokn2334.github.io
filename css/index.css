@@ -8,6 +8,7 @@
     top: 0;
     width: 100%;
   }
+
   
   /* Titles in Navbar */
   .navbar a {
@@ -247,14 +248,32 @@ figcaption {
   margin-left: 4em;
   }
 
+/*------------------------Changes for Flower Page------------------------*/
+.grid-flower
+{
+  margin: 0 2rem;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr;
+  column-gap: 7rem;
+}
+
+.push-title
+{
+  text-align: left;
+  padding-left: 4rem;
+  padding-top: 0.9em;
+}
+
 /*------------------------Media Query------------------------*/
 @media only screen and (max-width: 980px) {
   .navbar a {
     font-size: medium;
   }
   .navbarname{
-    font-size: medium;
+    font-size: small;
     margin-top: 0.60em;
+    display: none;
   }
   h1 {
     font-size: 3em;
@@ -310,6 +329,17 @@ figcaption {
     margin-top: 2em;
     align-self: center;
   }
+  .center {
+    display: block;
+    margin-left: 1em;
+    margin-right: auto;
+    width: 90%;
+    text-align: center;
+  }
+  .cap{
+    margin-left: 1em;
+  }
+  
 
 
   .hr-work{

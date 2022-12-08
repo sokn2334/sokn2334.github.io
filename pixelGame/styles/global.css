@@ -30,9 +30,95 @@ body{
     margin: 0 auto;
     outline: 1px solid white;
 
+    margin-top: 2em;
+
     transform: scale(3) translateY(50%);
 }
 
 .game-container canvas {
     image-rendering: pixelated;
+}
+
+
+/*------------------------Navigation Bar------------------------*/
+/* Navbar Itself*/
+.navbar {
+    overflow: hidden;
+    background-color: #F2C4ce;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  
+  /* Titles in Navbar */
+  .navbar a {
+    float: right;
+    display: block;
+    color: #4F4F51;
+    text-align: center;
+    padding: 30px 16px;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+  }
+  /* The Left Justified Title (Solymar)*/
+  .navbarname{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Button Hover */
+  .navbar a:hover {
+    background: #4F4F51;
+    color: #F2C4ce;
+  }
+  
+  .main {
+    padding: 16px;
+    margin-top: 35px;
+    height: 1500px; /* Used in this example to enable scrolling */
+  }
+
+  p {
+    color: #4F4F51;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+  }
+
+
+  @media only screen and (max-width: 980px) {
+    .navbar a {
+      font-size: medium;
+    }
+    .navbarname{
+      font-size: small;
+      margin-top: 0.60em;
+      display: none;
+    }
+    h1 {
+      font-size: 3em;
+      text-align: left;
+      font-weight: 700;
+      color: #F58F7C;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .game-container{
+        position: relative;
+        width: 352px;
+        height: 198px;
+        margin: 0 auto;
+        outline: 1px solid white;
+    
+        margin-top: 2em;
+    
+        transform: scale(1.4) translateY(50%);
+    }
 }
