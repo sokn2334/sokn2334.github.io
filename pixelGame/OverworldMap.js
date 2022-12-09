@@ -469,7 +469,7 @@ window.OverworldMaps ={
                         { type: "textMessage", text: "Swampy: You are looking for your witch?"},
                         { type: "textMessage", text: "Swampy: Sorry, I don't know..."},
                         { type: "textMessage", text: "Swampy: Keep following the path to the East, then North..."},
-                        { type: "textMessage", text: "Swampy: You'll find the shadow, maybe he'll know."},
+                        { type: "textMessage", text: "Swampy: You'll find Shadow, maybe he'll know."},
                         {who: "cat", type: "walk", direction: "up"},
                     ]
                 }
