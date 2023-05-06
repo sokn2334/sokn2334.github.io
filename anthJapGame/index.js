@@ -193,11 +193,11 @@ function animate() {
   }
 
   // jumping
-  if (player.velocity.y < 0) {
-    player.switchSprite('jump')
-  } else if (player.velocity.y > 0) {
-    player.switchSprite('fall')
-  }
+  // if (player.velocity.y < 0) {
+  //   player.switchSprite('jump')
+  // } else if (player.velocity.y > 0) {
+  //   player.switchSprite('fall')
+  // }
 
   // Enemy movement
   if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
@@ -211,11 +211,11 @@ function animate() {
   }
 
   // jumping
-  if (enemy.velocity.y < 0) {
-    enemy.switchSprite('jump')
-  } else if (enemy.velocity.y > 0) {
-    enemy.switchSprite('fall')
-  }
+  // if (enemy.velocity.y < 0) {
+  //   enemy.switchSprite('jump')
+  // } else if (enemy.velocity.y > 0) {
+  //   enemy.switchSprite('fall')
+  // }
 
   // detect for collision & enemy gets hit
   if (
@@ -280,9 +280,9 @@ window.addEventListener('keydown', (event) => {
         keys.a.pressed = true
         player.lastKey = 'a'
         break
-      case 'w':
-        player.velocity.y = -20
-        break
+      // case 'w':
+      //   player.velocity.y = -20
+      //   break
       case 's':
         player.attack()
         break
@@ -299,9 +299,9 @@ window.addEventListener('keydown', (event) => {
         keys.ArrowLeft.pressed = true
         enemy.lastKey = 'ArrowLeft'
         break
-      case 'ArrowUp':
-        enemy.velocity.y = -20
-        break
+      // case 'ArrowUp':
+      //   enemy.velocity.y = -20
+      //   break
       case 'ArrowDown':
         enemy.attack()
 
